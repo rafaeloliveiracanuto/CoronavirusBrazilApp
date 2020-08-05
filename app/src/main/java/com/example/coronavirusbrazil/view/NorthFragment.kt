@@ -1,4 +1,4 @@
-package com.example.coronavirusbrazil.ui.home
+package com.example.coronavirusbrazil.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronavirusbrazil.R
+import com.example.coronavirusbrazil.viewModel.NorthViewModel
 
 class NorthFragment : Fragment() {
 
