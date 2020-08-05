@@ -24,7 +24,7 @@ class SoutheastFragment : Fragment() {
         slideshowViewModel =
             ViewModelProviders.of(this).get(SoutheastViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_southeast, container, false)
-        val textView: TextView = root.findViewById(R.id.text_)
+        val textView: TextView = root.findViewById(R.id.text_southeast)
         slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
