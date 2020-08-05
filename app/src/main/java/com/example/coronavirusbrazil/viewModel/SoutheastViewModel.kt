@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class SoutheastViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
-        value = "This is southeast Fragment"
+        value = "Dados do coronavírus no Sudeste"
     }
     val text: LiveData<String> = _text
 }
