@@ -6,20 +6,26 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_north"
         android:name="com.example.coronavirusbrazil.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/north"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_northeast"
         android:name="com.example.coronavirusbrazil.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/northeast"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_south"
         android:name="com.example.coronavirusbrazil.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/northeast"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_southeast"
+        android:name="com.example.coronavirusbrazil.ui.slideshow.SlideshowFragment"
+        android:label="@string/northeast"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
