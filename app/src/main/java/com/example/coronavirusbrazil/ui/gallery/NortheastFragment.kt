@@ -12,7 +12,7 @@ import com.example.coronavirusbrazil.R
 
 class NortheastFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var galleryViewModel: NortheastViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -20,7 +20,7 @@ class NortheastFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel::class.java)
+                ViewModelProviders.of(this).get(NortheastViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_south, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
         galleryViewModel.text.observe(viewLifecycleOwner, Observer {
