@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.coronavirusbrazil.R
-import com.example.coronavirusbrazil.viewModel.SouthViewModel
 import com.example.coronavirusbrazil.viewModel.SoutheastViewModel
 
 class SoutheastFragment : Fragment() {

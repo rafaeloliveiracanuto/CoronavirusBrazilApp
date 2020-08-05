@@ -23,7 +23,7 @@ class NortheastFragment : Fragment() {
         galleryViewModel =
                 ViewModelProviders.of(this).get(NortheastViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_northeast, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
+        val textView: TextView = root.findViewById(R.id.text_northeast)
         galleryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
