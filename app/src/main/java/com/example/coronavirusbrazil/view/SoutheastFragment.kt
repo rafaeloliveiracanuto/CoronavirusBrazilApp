@@ -6,28 +6,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.lifecycle.Observer
 import com.example.coronavirusbrazil.R
+import com.example.coronavirusbrazil.viewModel.SouthViewModel
 import com.example.coronavirusbrazil.viewModel.SoutheastViewModel
 
 class SoutheastFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SoutheastFragment()
-    }
-
-    private lateinit var viewModel: SoutheastViewModel
+    private lateinit var slideshowViewModel: SoutheastViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.southeast_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SoutheastViewModel::class.java)
-        // TODO: Use the ViewModel
+        slideshowViewModel =
+            ViewModelProviders.of(this).get(SoutheastViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_southeast, container, false)
+        val textView: TextView = root.findViewById(R.id.text_)
+        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+            textView.text = it
+        })
+        return root
     }
 
 }
