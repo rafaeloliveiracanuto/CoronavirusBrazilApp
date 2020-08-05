@@ -23,7 +23,7 @@ class NorthFragment : Fragment() {
         homeViewModel =
                 ViewModelProviders.of(this).get(NorthViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_north, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val textView: TextView = root.findViewById(R.id.text_north)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
