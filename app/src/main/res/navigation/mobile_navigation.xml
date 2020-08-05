@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_north"
-        android:name="com.example.coronavirusbrazil.ui.home.HomeFragment"
+        android:name="com.example.coronavirusbrazil.ui.home.NorthFragment"
         android:label="@string/north"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_northeast"
-        android:name="com.example.coronavirusbrazil.ui.gallery.GalleryFragment"
+        android:name="com.example.coronavirusbrazil.ui.gallery.NortheastFragment"
         android:label="@string/northeast"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_south"
-        android:name="com.example.coronavirusbrazil.ui.slideshow.SlideshowFragment"
+        android:name="com.example.coronavirusbrazil.ui.slideshow.SouthFragment"
         android:label="@string/northeast"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_southeast"
-        android:name="com.example.coronavirusbrazil.ui.slideshow.SlideshowFragment"
+        android:name="com.example.coronavirusbrazil.ui.slideshow.SouthFragment"
         android:label="@string/northeast"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

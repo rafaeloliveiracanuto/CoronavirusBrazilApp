@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronavirusbrazil.R
 
-class HomeFragment : Fragment() {
+class NorthFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
