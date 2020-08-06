@@ -1,4 +1,4 @@
-# CoronavirusBrazilApp
+# CoronavirusBrazil App
 
 <p>
 An android app to show all the information about coronavirus's statistics. The data is filtered according to the region of Brazil. 
