@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val remote = RetrofitClient.createService(CovidDataService::class.java)
-        val call: Call<CovidDataModel> = remote.getData(Constants.UF.RN)
+        val call: Call<CovidDataModel> = remote.getData(Constants.UF.SP)
 
         val response = call.enqueue(object : Callback<CovidDataModel> {
             override fun onFailure(call: Call<CovidDataModel>, t: Throwable) {
