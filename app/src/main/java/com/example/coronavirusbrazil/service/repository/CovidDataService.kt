@@ -8,6 +8,6 @@ import retrofit2.http.Path
 interface CovidDataService {
 
     @GET("/api/report/v1/brazil/uf/{uf}")
-    fun getData(@Path(value = "uf", encoded = true) uf: Int): Call<CovidDataModel>
+    fun getData(@Path(value = "uf", encoded = true) uf: String): Call<CovidDataModel>
 
 }
