@@ -20,6 +20,7 @@ import com.example.coronavirusbrazil.service.model.CovidDataModel
 import com.example.coronavirusbrazil.service.repository.CovidDataService
 import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +34,13 @@ class MainActivity : AppCompatActivity() {
         val call: Call<CovidDataModel> = remote.getData(Constants.UF.RN)
 
         val response = call.enqueue(object : Callback<CovidDataModel> {
+            override fun onFailure(call: Call<CovidDataModel>, t: Throwable) {
+                val s = t.message
+            }
+
+            override fun onResponse(call: Call<CovidDataModel>, response: Response<CovidDataModel>) {
+                val s = response.body()
+            }
 
         })
 
