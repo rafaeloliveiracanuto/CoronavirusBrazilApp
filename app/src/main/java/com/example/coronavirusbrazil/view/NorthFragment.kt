@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +35,11 @@ class NorthFragment : Fragment() {
         })
 
         mViewModel.validation.observe(viewLifecycleOwner, Observer {
-            
+            if (it.success()) {
+                //
+            } else {
+                Toast.makeText(context, it.failure(), Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }

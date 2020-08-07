@@ -28,20 +28,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val remote = RetrofitClient.createService(CovidDataService::class.java)
-        val call: Call<CovidDataModel> = remote.getData(Constants.UF.SP)
-
-        val response = call.enqueue(object : Callback<CovidDataModel> {
-            override fun onFailure(call: Call<CovidDataModel>, t: Throwable) {
-                val s = t.message
-            }
-
-            override fun onResponse(call: Call<CovidDataModel>, response: Response<CovidDataModel>) {
-                val s = response.body()
-            }
-
-        })
-
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
