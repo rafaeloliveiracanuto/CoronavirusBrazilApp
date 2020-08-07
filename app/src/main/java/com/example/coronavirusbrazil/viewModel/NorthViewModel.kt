@@ -22,7 +22,7 @@ class NorthViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getData() {
 
-        val listener = object : APIListener<CovidDataModel> {
+        mCovidDataRepository.getData(Constants.UF.RN, object : APIListener<CovidDataModel> {
             override fun onSuccess(model: CovidDataModel) {
                 mGetData.value = model
             }
@@ -31,8 +31,6 @@ class NorthViewModel(application: Application) : AndroidViewModel(application) {
                 mGetData.value = CovidDataModel()
                 mValidation.value = ValidationListener(str)
             }
-        }
-
-        mCovidDataRepository.getData(Constants.UF.AM, listener)
+        })
     }
 }
