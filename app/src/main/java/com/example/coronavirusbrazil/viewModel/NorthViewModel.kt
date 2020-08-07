@@ -18,5 +18,7 @@ class NorthViewModel(application: Application) : AndroidViewModel(application) {
     private val mGetData = MutableLiveData<CovidDataModel>()
     var covidData: LiveData<CovidDataModel> = mGetData
 
-
+    fun getData() {
+        
+    }
 }
