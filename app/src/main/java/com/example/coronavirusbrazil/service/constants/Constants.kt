@@ -5,6 +5,10 @@ class Constants private constructor(){
         const val BASE_URL = "https://covid19-brazil-api.now.sh"
     }
 
+    object HTTP {
+        const val SUCCESS = 200
+    }
+
     object UF {
         const val RO = "ro"
         const val AC = "ac"
