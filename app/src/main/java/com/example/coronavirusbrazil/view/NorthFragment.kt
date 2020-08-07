@@ -22,16 +22,35 @@ class NorthFragment : Fragment() {
         mViewModel = ViewModelProvider(this).get(NorthViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_north, container, false)
-        val textView: TextView = root.findViewById(R.id.text_north)
 
-        observe()
+        val textViewUF: TextView = root.findViewById(R.id.text_uf)
+        val textViewState: TextView = root.findViewById(R.id.text_state)
+        val textViewCases: TextView = root.findViewById(R.id.text_cases)
+        val textViewDeaths: TextView = root.findViewById(R.id.text_deaths)
+        val textViewSuspects: TextView = root.findViewById(R.id.text_suspects)
+        val textViewRefuses: TextView = root.findViewById(R.id.text_refuses)
+        val textViewDateTime: TextView = root.findViewById(R.id.text_datetime)
+
+        val textViewList = arrayListOf<TextView>(
+            textViewUF, textViewState, textViewCases,
+            textViewDeaths, textViewSuspects, textViewRefuses,
+            textViewDateTime
+        )
+
+        observe(textViewList)
 
         return root
     }
 
-    private fun observe() {
+    private fun observe(textViewList: List<TextView>) {
         mViewModel.covidData.observe(viewLifecycleOwner, Observer {
-
+            textViewList[0].text = it.uf
+            textViewList[1].text = it.state
+            textViewList[2].text = it.cases.toString()
+            textViewList[3].text = it.deaths.toString()
+            textViewList[4].text = it.suspects.toString()
+            textViewList[5].text = it.refuses.toString()
+            textViewList[6].text = it.datetime
         })
 
         mViewModel.validation.observe(viewLifecycleOwner, Observer {
