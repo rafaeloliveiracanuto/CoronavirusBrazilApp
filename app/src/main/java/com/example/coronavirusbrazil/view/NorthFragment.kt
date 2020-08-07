@@ -50,13 +50,13 @@ class NorthFragment : Fragment() {
 
     private fun observe(textViewList: List<TextView>) {
         mViewModel.covidData.observe(viewLifecycleOwner, Observer {
-            textViewList[0].text = it.uf
-            textViewList[1].text = it.state
-            textViewList[2].text = it.cases.toString()
-            textViewList[3].text = it.deaths.toString()
-            textViewList[4].text = it.suspects.toString()
-            textViewList[5].text = it.refuses.toString()
-            textViewList[6].text = it.datetime
+            textViewList[0].text = "UF: ${it.uf}"
+            textViewList[1].text = "Estado: ${it.state}"
+            textViewList[2].text = "Casos: " + it.cases.toString()
+            textViewList[3].text = "Mortes: " + it.deaths.toString()
+            textViewList[4].text = "Suspeitos: " + it.suspects.toString()
+            textViewList[5].text = "Descartados: " + it.refuses.toString()
+            textViewList[6].text = "Última atualização: ${it.datetime}"
         })
 
         mViewModel.validation.observe(viewLifecycleOwner, Observer {
