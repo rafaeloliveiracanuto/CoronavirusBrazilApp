@@ -16,7 +16,9 @@ class CovidDataRepository(val context: Context) {
 
     private val mRemote = RetrofitClient.createService((CovidDataService::class.java))
 
-    fun getData(call: Call<CovidDataModel>, listener: APIListener<CovidDataModel>) {
+    fun getData(uf: String, listener: APIListener<CovidDataModel>) {
+
+        val call: Call<CovidDataModel> = mRemote.getData(uf)
 
         call.enqueue(object : Callback<CovidDataModel> {
             override fun onFailure(call: Call<CovidDataModel>, t: Throwable) {
