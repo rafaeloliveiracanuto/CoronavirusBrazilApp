@@ -2,8 +2,6 @@ package com.example.coronavirusbrazil.view
 
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,10 +12,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.coronavirusbrazil.R
-import com.example.coronavirusbrazil.service.RetrofitClient
+import com.example.coronavirusbrazil.service.repository.remote.RetrofitClient
 import com.example.coronavirusbrazil.service.constants.Constants
 import com.example.coronavirusbrazil.service.model.CovidDataModel
-import com.example.coronavirusbrazil.service.repository.CovidDataService
+import com.example.coronavirusbrazil.service.repository.remote.CovidDataService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

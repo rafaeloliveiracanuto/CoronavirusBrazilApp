@@ -1,4 +1,4 @@
-package com.example.coronavirusbrazil.service.repository
+package com.example.coronavirusbrazil.service.repository.remote
 
 import com.example.coronavirusbrazil.service.model.CovidDataModel
 import retrofit2.Call

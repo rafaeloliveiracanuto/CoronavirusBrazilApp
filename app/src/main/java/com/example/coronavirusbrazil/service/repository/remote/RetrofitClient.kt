@@ -1,4 +1,4 @@
-package com.example.coronavirusbrazil.service
+package com.example.coronavirusbrazil.service.repository.remote
 
 import com.example.coronavirusbrazil.service.constants.Constants
 import okhttp3.OkHttpClient
@@ -13,7 +13,7 @@ class RetrofitClient private constructor() {
         private fun getRetrofitInstance(): Retrofit {
             val httpClient = OkHttpClient.Builder()
 
-            if (!::retrofit.isInitialized) {
+            if (!Companion::retrofit.isInitialized) {
                 retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .client(httpClient.build())
@@ -25,7 +25,8 @@ class RetrofitClient private constructor() {
         }
 
         fun <S> createService(serviceClass: Class<S>): S {
-            return getRetrofitInstance().create(serviceClass)
+            return getRetrofitInstance()
+                .create(serviceClass)
         }
     }
 }
