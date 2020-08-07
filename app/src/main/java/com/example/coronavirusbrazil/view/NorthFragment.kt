@@ -29,6 +29,12 @@ class NorthFragment : Fragment() {
     }
 
     private fun observe() {
-        
+        mViewModel.covidData.observe(viewLifecycleOwner, Observer {
+
+        })
+
+        mViewModel.validation.observe(viewLifecycleOwner, Observer {
+            
+        })
     }
 }
