@@ -5,6 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.coronavirusbrazil.service.constants.Constants
+import com.example.coronavirusbrazil.service.listener.APIListener
 import com.example.coronavirusbrazil.service.listener.ValidationListener
 import com.example.coronavirusbrazil.service.model.CovidDataModel
 import com.example.coronavirusbrazil.service.repository.CovidDataRepository
@@ -19,6 +21,18 @@ class NorthViewModel(application: Application) : AndroidViewModel(application) {
     var covidData: LiveData<CovidDataModel> = mGetData
 
     fun getData() {
-        
+
+        val listener = object : APIListener<CovidDataModel> {
+            override fun onSuccess(model: CovidDataModel) {
+                mGetData.value = model
+            }
+
+            override fun onFailure(str: String) {
+                mGetData.value = CovidDataModel()
+                mValidation.value = ValidationListener(str)
+            }
+        }
+
+        mCovidDataRepository.getData(Constants.UF.AM, listener)
     }
 }
