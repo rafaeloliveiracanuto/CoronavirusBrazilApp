@@ -14,7 +14,7 @@ import retrofit2.Response
 
 class CovidDataRepository(val context: Context) {
 
-    private val mRemote = RetrofitClient.createService((CovidDataService::class.java))
+    private val mRemote = RetrofitClient.createService(CovidDataService::class.java)
 
     fun getData(uf: String, listener: APIListener<CovidDataModel>) {
 
