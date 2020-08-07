@@ -27,4 +27,8 @@ class NorthFragment : Fragment() {
 
         return root
     }
+
+    private fun observe() {
+        
+    }
 }
